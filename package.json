@@ -1,5 +1,5 @@
 {
-  "name": "rets-client",
+  "name": "@placester/rets-client",
   "version": "5.1.0",
   "description": "A RETS client (Real Estate Transaction Standard).",
   "main": "index.js",
@@ -37,7 +37,12 @@
     "pretest": "coffee --compile --output dist/ lib/ && tsc --noEmit",
     "test": "node_modules/mocha/bin/_mocha --compilers ts-node/register test/*.ts",
     "prepublish": "npm run test",
-    "dev": "coffee --watch --output dist lib/"
+    "dev": "coffee --watch --output dist lib/",
+    "publish-please": "publish-please",
+    "prepublish": "publish-please guard"
+  },
+  "publishConfig": {
+    "registry": "https://placester.jfrog.io/placester/api/npm/npm-local"
   },
   "repository": {
     "type": "git",
