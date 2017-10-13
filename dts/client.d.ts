@@ -37,7 +37,20 @@ export interface IClientSettingsWithUAAuthorization extends IClientConfiguration
 
 export type ClientSettings = IClientConfiguration & IClientSettingsWithUAAuthorization
 
-export class Client {
+export interface IClient {
+  settings: ClientSettings
+  metadata: IClientMetadata
+  systemData: any
+  search: IClientSearch
+  /**
+   * https://github.com/sbruno81/rets-client/blob/master/lib/clientModules/object.coffee
+   */
+  objects: IClientObjects
+  login: () => Promise<any>
+  logout: () => Promise<any>
+}
+
+export class Client implements IClient {
   settings: ClientSettings
   constructor(settings: ClientSettings)
   metadata: IClientMetadata
