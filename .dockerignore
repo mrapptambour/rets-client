@@ -56,4 +56,4 @@ test/*.js
 
 # dockerignore - content above this line is automatically generated and modifications may be omitted
 # see npmjs.com/dockerignore for more details.
-!.git
+codeship*
