@@ -42,7 +42,7 @@
     "prepublish": "publish-please guard"
   },
   "publishConfig": {
-    "registry": "https://placester.jfrog.io/placester/api/npm/npm"
+    "registry": "https://placester.jfrog.io/placester/api/npm/npm-local"
   },
   "repository": {
     "type": "git",
