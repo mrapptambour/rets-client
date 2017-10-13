@@ -1,6 +1,6 @@
 {
   "name": "@placester/rets-client",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A RETS client (Real Estate Transaction Standard).",
   "main": "index.js",
   "types": "dts/index.d.ts",
