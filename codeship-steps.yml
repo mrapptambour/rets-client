@@ -1,0 +1,8 @@
+- name: test
+  service: rets_client_node
+  command: npm test
+
+- name: publish
+  service: rets_client_node
+  tag: ^master|(v*\d+\.\d+\.\d+\.?\d*)$
+  command: npm run publish-please
