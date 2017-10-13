@@ -52,3 +52,4 @@ test/*.js
 *.log
 .npmrc
 *.aes
+ts-node*
