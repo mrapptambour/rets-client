@@ -153,21 +153,6 @@ export interface IRetsStreamHeaderInfoEvent extends IRetsStreamEvent<IHeaderInfo
   type: 'headerInfo'
 }
 
-export interface IObjectHeaderInfo {
-  contentId: string
-  objectId: string
-  contentType: string
-  /**
-   * Present with Location=1 GetObject requests
-   */
-  location?: string
-  contentDescription?: string
-  /**
-   * CAML-case dictionary of extra headerInfo metadata
-   */
-  objectData?: IDictionaryLike<string>
-}
-
 export interface IRecord extends IDictionaryLike<any> {
   metadata?: IRecordMetadata[]
   info?: {}

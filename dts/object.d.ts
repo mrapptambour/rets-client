@@ -1,6 +1,6 @@
 /// <reference types="node" />
 
-import { IDictionaryLike,  } from './client'
+import { IDictionaryLike } from './client'
 
 export interface IClientObjects {
     stream: {
