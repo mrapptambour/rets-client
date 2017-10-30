@@ -35,11 +35,13 @@
     "index.js"
   ],
   "scripts": {
-    "pretest": "coffee --compile --output dist/ lib/ && tsc --noEmit",
+    "pretest": "npm run compile && npm run tslint",
+    "compile": "coffee --compile --output dist/ lib/ && tsc --noEmit",
     "test": "node_modules/mocha/bin/_mocha --compilers ts-node/register test/*.ts",
     "dev": "coffee --watch --output dist lib/",
     "publish-please": "publish-please",
-    "prepublish": "publish-please guard"
+    "prepublish": "publish-please guard",
+    "tslint": "tslint dts/* --fix"
   },
   "publishConfig": {
     "registry": "https://placester.jfrog.io/placester/api/npm/npm-local"

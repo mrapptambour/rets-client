@@ -12,7 +12,7 @@
         "noUnusedParameters": true
     },
     "include": [
-        "dts/*.ts",
+        "dts/*.d.ts",
         "test/*.ts"
     ]
 }

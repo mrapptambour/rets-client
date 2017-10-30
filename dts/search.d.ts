@@ -1,4 +1,4 @@
-import { IQueryOptions, IRetsStream, IQueryResponse } from './client'
+import { IQueryOptions, IQueryResponse, IRetsStream } from './client';
 
 export interface IClientSearch {
     stream: {
@@ -6,18 +6,18 @@ export interface IClientSearch {
        * headerInfo []
        * data [result]
        */
-      query (
+      query(
         resourceType: string,
         classType: string,
         query: string,
         options?: IQueryOptions,
         rawData?: boolean,
         parserEncoding?: string): {
-          retsStream: IRetsStream
-        }
-    }
+          retsStream: IRetsStream,
+        },
+    };
     /**
      * perform a query using DMQL2 -- pass resource, class, and query, and options
      */
-    query (resourceType: string, classType: string, query: string, options?: IQueryOptions, parserEncoding?: string): Promise<IQueryResponse>
+    query(resourceType: string, classType: string, query: string, options?: IQueryOptions, parserEncoding?: string): Promise<IQueryResponse>;
 }

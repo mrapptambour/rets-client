@@ -1,22 +1,22 @@
-import { RetsContext, IHeaderInfo, IRetsQueryOptions } from './client'
+import { IHeaderInfo, IRetsQueryOptions, RetsContext } from './client';
 export interface IRetsError {
-  replyTag: string
-  replyCode: string
-  replyText: string
+  replyTag: string;
+  replyCode: string;
+  replyText: string;
 }
 export class RetsError extends Error implements IRetsError, Partial<RetsContext> {
-  replyTag: string
-  replyCode: string
-  replyText: string
+  public replyTag: string;
+  public replyCode: string;
+  public replyText: string;
 
-  headerInfo?: IHeaderInfo
-  retsMethod?: 'search'
-  queryOptions?: IRetsQueryOptions
+  public headerInfo?: IHeaderInfo;
+  public retsMethod?: 'search';
+  public queryOptions?: IRetsQueryOptions;
 }
 
 export class RetsParamError extends RetsError { }
 export class RetsServerError extends RetsError {
-  constructor(retsContext: RetsContext, replyCode?: any, replyText?: string)  
+  constructor(retsContext: RetsContext, replyCode?: any, replyText?: string)
 }
 export class RetsReplyError extends RetsError {
   constructor(retsContext: RetsContext, replyCode?: any, replyText?: string)
@@ -26,9 +26,8 @@ export class RetsReplyError extends RetsError {
  * It inherits from Bluebird OperationalError, but the { cause } property not set
  */
 export class RetsProcessingError extends RetsError {
+  public isOperational: boolean;
+  public sourceError: string;
   constructor(retsContext: RetsContext, message?: string)
-
-  isOperational: boolean
-  sourceError: string
 }
 export class RetsPermissionError extends RetsError { }
